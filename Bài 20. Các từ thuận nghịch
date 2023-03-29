@@ -1,0 +1,73 @@
+c1:#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <bits/stdc++.h>
+#include <algorithm>
+using namespace std;
+int tn(string &s){
+    int l=0;int r=s.length()-1;
+    while(l<r){
+        if(s[l]!=s[r]) return 0;
+        l++;r--;
+    }
+    return 1;
+}
+
+int main() {
+    string s;
+    getline(cin,s);
+      stringstream ss(s);
+    vector<string>v;
+    string tmp;
+    while(ss>>tmp){if(tn(tmp)){
+    v.push_back(tmp);
+    }
+    }
+    sort(v.begin(),v.end());
+    for(string x:v){
+        cout<<x<<" ";
+    }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
+c2:
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+#include <ctype.h>
+int tn(char a[]){
+    int l=0;int r=strlen(a)-1;
+    while(l<=r){
+        if(a[l]!=a[r]) return 0;
+        l++;
+        r--;
+    }
+    return 1;
+}
+int comp(const void *a,const void *b){
+    char *x=(char*)a;
+    char *y=(char*)b;
+    return strcmp(x,y);
+}
+int main() {
+char c[10001];
+    fgets(c,100001,stdin);
+    c[strlen(c)-1]='\0';
+    char a[1000][100];
+    int n=0;
+    char *token=strtok(c," ");
+    while(token!=NULL){
+        if(tn(token))
+        {strcpy(a[n],token);
+        n++;
+        }
+        token=strtok(NULL," ");        
+    }
+    qsort(a,n,sizeof(a[0]),comp);
+    for(int i=0;i<n;i++){
+        printf("%s ",a[i]);
+    }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
