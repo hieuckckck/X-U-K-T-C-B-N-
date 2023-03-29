@@ -1,0 +1,46 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    string s;
+    getline(cin,s);
+    sort(s.begin(),s.end());
+    cout<<s<<endl;
+    reverse(s.begin(),s.end());
+    cout<<s<<endl;
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
+
+c2:
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int comp(const void *a,const void *b){
+    char *x=(char*)a;
+    char *y=(char*)b;
+    return *x-*y;
+}
+int comp1(const void *a,const void *b){
+     char *x=(char*)a;
+    char *y=(char*)b;
+    return *y-*x;
+}
+    
+int main() {
+char c[10001];
+    gets(c);
+    qsort(c,strlen(c),sizeof(char),comp);
+    printf("%s",c);
+    printf("\n");
+    qsort(c,strlen(c),sizeof(char),comp1);
+    printf("%s",c);
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
