@@ -1,0 +1,103 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <bits/stdc++.h>
+#include <algorithm>
+using namespace std;
+
+bool comp(string a,string b){
+    if(a.length()!=b.length()){
+        if(a.length()<b.length()) return true;
+        return false;
+    }
+    else{
+        if(a<b){
+            return true;
+        }
+        return false;
+    }
+}
+int main() {
+    string s;
+    getline(cin,s);
+    stringstream ss(s);
+    string tmp;
+    vector<string>v;
+    while(ss>>tmp){
+        v.push_back(tmp);
+    }
+    sort(v.begin(),v.end(),comp);
+    for(string x:v){
+        cout<<x<<" ";
+    }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
+c2:#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <bits/stdc++.h>
+#include <algorithm>
+using namespace std;
+
+bool comp(string a,string b){
+    if(a.length()!=b.length()){
+        if(a.length()<b.length()) return true;
+        return false;
+    }
+    else{
+        if(a<b){
+            return true;
+        }
+        return false;
+    }
+}
+int main() {
+    string s;
+    getline(cin,s);
+    stringstream ss(s);
+    string tmp;
+    vector<string>v;
+    while(ss>>tmp){
+        v.push_back(tmp);
+    }
+    sort(v.begin(),v.end(),comp);
+    for(string x:v){
+        cout<<x<<" ";
+    }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
+c3:
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int comp(const void *a,const void *b){
+    char *x=(char*)a;
+    char *y=(char*)b;
+    if(strlen(x)!=strlen(y)){
+        return strlen(x)-strlen(y);
+    }
+    else{
+        return strcmp(x,y);
+    }
+}
+int main() {
+char c[10001];
+    gets(c);
+    char a[1000][100];
+    int n=0;
+    char *token=strtok(c," ");
+    while(token!=NULL){
+        strcpy(a[n],token);
+        n++;
+        token=strtok(NULL," ");
+    }
+    qsort(a,n,sizeof(a[0]),comp);
+    for(int i=0;i<n;i++){
+        printf("%s ",a[i]);
+    }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
