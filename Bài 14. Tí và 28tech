@@ -1,0 +1,54 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <bits/stdc++.h>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    string s;
+    getline(cin,s);
+    for(int i=0;i<s.length();i++){
+        s[i]=tolower(s[i]);
+    }
+    stringstream ss(s);
+    string tmp;
+    int cnt=0;
+    while(ss>>tmp){
+        if(tmp=="28tech"){
+            cnt++;
+        }
+    }
+    cout<<cnt;
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
+
+c2:
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+#include <ctype.h>
+void thuong(char c[]){
+    for(int i=0;i<strlen(c);i++){
+        c[i]=tolower(c[i]);
+    }
+}
+int main() {
+char c[10001];
+    fgets(c,10001,stdin);
+    thuong(c);
+    char *word=strtok(c," ");
+    int dem=0;
+    while(word!=NULL){
+        if(strcmp(word,"28tech")==0){
+            dem++;
+        }
+        word=strtok(NULL," ");
+    }
+    printf("%d",dem);
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
