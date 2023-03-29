@@ -1,0 +1,146 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <bits/stdc++.h>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    string s;
+    getline(cin,s);
+    stringstream ss(s);
+    string tmp;
+    vector <string>v;
+    int dem=0;
+    while(ss>>tmp){
+        dem++;
+        if(dem%2!=0){
+            v.push_back(tmp);
+        }
+        else{
+            reverse(tmp.begin(),tmp.end());
+            v.push_back(tmp);
+        }
+    }
+    for(int i=0;i<v.size();i++){
+        cout<<v[i];
+        if(i!=v.size()-1){
+            cout<<" ";
+        }
+    }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
+c2:
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <bits/stdc++.h>
+#include <algorithm>
+using namespace std;
+string lat(string s){
+    string res=s;
+    int l=0;int r=res.length()-1;
+    while(l<r){
+        char tmp=res[l];
+        res[l]=res[r];
+        res[r]=tmp;
+        l++;
+        r--;
+    }
+    return res;
+}
+
+int main() {
+    string s;
+    getline(cin,s);
+    stringstream ss(s);
+    string tmp;int dem=0;
+    while(ss>>tmp){
+        if(dem%2==0){
+            cout<<tmp<<" ";
+        }
+        else{
+            cout<<lat(tmp)<<" ";
+        }
+        dem++;
+    }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
+
+c3:
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+void daoxau(char c[]){
+    int l=0;int r=strlen(c)-1;
+    while(l<=r){
+        char tmp=c[l];
+        c[l]=c[r];
+        c[r]=tmp;
+        l++;
+        r--;
+    }
+}
+int main() {
+char c[10001];
+    fgets(c,10001,stdin);
+    char *token=strtok(c," ");
+    char a[100][100];
+    int n=0;
+    while(token!=NULL){strcpy(a[n],token);
+       n++;
+                       token=strtok(NULL," ");
+    }
+    for(int i=0;i<n;i++){
+        if(i%2==0) printf("%s",a[i]);
+        else{
+            for(int j=strlen(a[i])-1;j>=0;j--){
+                printf("%c",a[i][j]);
+            }
+        }
+        if(i!=n-1){
+            printf(" ");
+        }
+    }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
+
+c4:
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+#include <ctype.h>
+void daoxau(char c[]){
+    int l=0;int r=strlen(c)-1;
+    while(l<=r){
+        char tmp=c[l];
+        c[l]=c[r];
+        c[r]=tmp;
+        l++;
+        r--;
+    }
+}
+int main() {
+char c[10001];
+    fgets(c,10001,stdin);
+    char *token=strtok(c," ");
+    int dem=0;
+    while(token!=NULL){dem++;
+        if(dem%2!=0){
+            printf("%s ",token);
+        }
+                       else{
+                           daoxau(token);
+                           printf("%s ",token);
+                       }
+                       token=strtok(NULL," ");
+    }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
