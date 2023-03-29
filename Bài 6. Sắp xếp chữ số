@@ -1,0 +1,25 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+bool comp(char a,char b){
+    if(a<b) return true ;
+    return false;
+}
+int main() {
+    string s;
+    getline(cin,s);
+    sort(s.begin(),s.end(),comp);
+    int dem=0;
+    while(dem<s.length()-1&&s[dem]=='0'){
+        dem++;
+    }
+    for(int i=dem;i<s.length();i++){
+        cout<<s[i];
+    }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
