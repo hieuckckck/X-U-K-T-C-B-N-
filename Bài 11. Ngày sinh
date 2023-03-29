@@ -1,0 +1,79 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    string s;
+    getline(cin,s);
+    for(int i=0;i<s.length();i++){
+        if(s[1]=='/'){
+            s.insert(0,"0");
+        }
+        if(s[4]=='/'){
+            s.insert(3,"0");
+        }
+    }
+    cout<<s;
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
+c2:
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <bits/stdc++.h>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    string s;
+    getline(cin,s);
+    for(int i=0;i<s.length();i++){
+        if(s[i]=='/' ){
+            s[i]=' ';
+        }
+    }
+    stringstream ss(s);
+    string tmp;
+    while(ss>>tmp){
+        if(tmp.length()==1){
+            cout<<"0"<<tmp;
+        }
+        else{
+            cout<<tmp;
+        }
+        if(tmp.length()!=4){
+            cout<<"/";
+        }
+    }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
+c3:
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+char c[1000];
+    scanf("%s",c);
+    char *word=strtok(c,"/");
+                      while(word!=NULL){
+                          if(strlen(word)==1){
+                              printf("0%s",word);
+                          }
+                          else{
+                              printf("%s",word);
+                          }
+                      if(strlen(word)!=4) printf("/");
+                          word=strtok(NULL,"/");
+                      }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
